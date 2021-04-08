@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+payment</title>
+<SCRIPT LANGUAGE="JAVASCRIPT">
+function essentials_of_validation(form1)
+{
+var current=new Date();
+var return_value=true;
+var username=form1.txtusername.value;
+var password1=form1.txtpassword1.value;
+var a=form1.dd.value;
+var b=form1.mm.value;
+var c=form1.yyyy.value;
+if(isNaN(username))
+{
+window.alert("Not a valid account number");
+}
+if(a<32 && b<13&& c>=current.getFullYear())
+{
+ if(c>current.getFullYear())
+ {
+ window.alert(" you are validated");
+ }
+ else if(c=current.getFullYear())
+ {
+ if(b>current.getMonth())
+ {
+ window.alert(" you are validated");
+ }
+ else if(b=current.getMonth())
+ {
+ if(a>current.getDate())
+ {
+ window.alert("you are validated");
+ }
+ }
+ }
+ else
+ {
+ window.alert("Your card has expired");
+ }
+}
+ else
+ {
+ window.alert(" card has expired");
+ }
+}
+</script>
+</head>
+<body bgcolor="lightgreen">
+<marquee><strong>PAYMENT PROCESS</strong></marquee>
+<BR>
+<form name="form1" onSubmit="essentials_of_validation(this)">
+<font size="+2">
+PAYMENT THROUGH
+<br><BR>
+<input name="pay" type="radio" >CREDIT CARD
+<input name="pay" type="radio" >DEBIT CARD
+<br>
+BANK
+<select name="bank">
+<option selected>SBI
+<option>HDFC
+<option>ICICI
+<option>others
+</select>
+<br><BR>
+Account/Card number : <input name="txtusername" type="textbox">
+<br><BR>
+Net banking id/Password : <input name="txtpassword1" type="password">
+<br><BR>
+Enter date of expiryof account/card: <input name="dd" type="text" size=2>(dd)
+<input name="mm" type="text" size=2>(mm)
+<input name="yyyy" type="text" size=4>(yyyy)
+<br><BR>
+<input type="submit" value="Accept">
+<BR>
+<input type="reset" value="Reject">
+</form>
+<br><br>
+<A Href="Registration.html">Home</A>
+<br>
+<br><A Href="User_Login.html">Back</A>
+</body>
+</html>
