@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<SCRIPT LANGUAGE="JAVASCRIPT">
+function essentials_of_validation(form1)
+{
+ var return_value=true;
+ var username=form1.txtusername.value;
+ var password1=form1.txtpassword1.value;
+ var password2=form1.txtpassword2.value;
+ if(username.length < 8)
+{
+ return_value=false;
+ window.alert("user name is less than 8 chars");
+}
+if(password1.length<6)
+{
+ return_value=false;
+ window.alert(" password should be greater than 6 char's ");
+ form1.txtpassword1.value="";
+ form1.txtpassword2.value="";
+}
+if(password1!=password2)
+{
+return_value=false;
+window.alert("User password mismatched ");
+form1.txtpassword1.value="";
+form1.txtpassword2.value="";
+}
+return return_value;
+}
+</script>
+</head>
+<body bgcolor="skyblue">
+<CENTER><U></U></CENTER><h1>USER LOGIN PAGE</h1> 
+<marquee><b><u><font face="comic sans ms" color="RED">LOGIN HERE</font></u></b></marquee> 
+</U></CENTER>
+<form name="form1" onSubmit="essentials_of_validation(this)"><BR><BR><BR>
+USER NAME<input type="text" name="txtusername" size=20>
+<br><br><br>PASSWORD: <input type="password" name="txtpassword1" size=20>
+<BR><BR><BR>
+CONFIRM PASSWORD:<input type="password" name="txtpassword2" size=20>
+<br><br><BR>
+<input type="submit" value="submit">
+<input type="reset" value="reset">
+</form>
+</body>
+</html>
